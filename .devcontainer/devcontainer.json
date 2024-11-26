@@ -21,6 +21,7 @@
   },
   "postCreateCommand": "terraform --version && helm version && kubectl version --client",
   "mounts": [
-    "source=devcontainer-volumes,target=/workspace,type=volume"
+    "source=devcontainer-volumes,target=/workspace,type=volume",
+    "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind"
   ]
 }

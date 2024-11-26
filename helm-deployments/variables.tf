@@ -4,12 +4,12 @@ variable "kubeconfig_path" {
   default     = "~/.kube/config"
 }
 
-variable "namespace" {
+variable "namespace_monitoring" {
   description = "Namespace to deploy the Helm charts"
   type        = string
   default     = "monitoring"
   validation {
-    condition     = length(var.namespace) > 0
+    condition     = length(var.namespace_monitoring) > 0
     error_message = "Namespace must be a non-empty string"
   }
 }

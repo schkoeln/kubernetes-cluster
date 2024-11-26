@@ -17,8 +17,3 @@ output "tempo_release_name" {
   value       = helm_release.tempo.name
   description = "Name of the Tempo Helm release"
 }
-
-output "namespace" {
-  value       = var.namespace
-  description = "Namespace where the Helm charts are deployed"
-}

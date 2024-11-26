@@ -7,7 +7,7 @@ provider "helm" {
 resource "helm_release" "prometheus" {
   name       = "prometheus"
   chart      = "prometheus-community/prometheus"
-  namespace  = var.namespace
+  namespace  = var.namespace_monitoring
   values     = [file("${path.module}/values/prometheus-values.yaml")]
 
   depends_on = [null_resource.kubernetes_ready]
@@ -16,7 +16,7 @@ resource "helm_release" "prometheus" {
 resource "helm_release" "grafana" {
   name       = "grafana"
   chart      = "grafana/grafana"
-  namespace  = var.namespace
+  namespace  = var.namespace_monitoring
   values     = [file("${path.module}/values/grafana-values.yaml")]
 
   depends_on = [null_resource.kubernetes_ready]
@@ -25,7 +25,7 @@ resource "helm_release" "grafana" {
 resource "helm_release" "loki" {
   name       = "loki"
   chart      = "grafana/loki"
-  namespace  = var.namespace
+  namespace  = var.namespace_monitoring
   values     = [file("${path.module}/values/loki-values.yaml")]
 
   depends_on = [null_resource.kubernetes_ready]
@@ -34,7 +34,7 @@ resource "helm_release" "loki" {
 resource "helm_release" "tempo" {
   name       = "tempo"
   chart      = "grafana/tempo"
-  namespace  = var.namespace
+  namespace  = var.namespace_monitoring
   values     = [file("${path.module}/values/tempo-values.yaml")]
 
   depends_on = [null_resource.kubernetes_ready]
@@ -42,7 +42,7 @@ resource "helm_release" "tempo" {
 
 resource "kubernetes_namespace" "monitoring" {
   metadata {
-    name = var.namespace
+    name = var.namespace_monitoring
   }
 }
 
