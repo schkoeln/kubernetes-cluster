@@ -1,0 +1,4 @@
+tempo:
+  storage:
+    trace:
+      backend: "local"

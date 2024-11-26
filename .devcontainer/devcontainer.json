@@ -1,0 +1,26 @@
+{
+  "name": "Kubernetes Cluster Development",
+  "dockerFile": "Dockerfile",
+  "context": "..",
+  "runArgs": ["--privileged"],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true
+      },
+      "extensions": [
+        "hashicorp.terraform",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-azuretools.vscode-docker",
+        "redhat.vscode-yaml",
+        "eamodio.gitlens",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "postCreateCommand": "terraform --version && helm version && kubectl version --client",
+  "mounts": [
+    "source=devcontainer-volumes,target=/workspace,type=volume"
+  ]
+}
