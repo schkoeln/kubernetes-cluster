@@ -2,7 +2,9 @@
   "name": "Kubernetes Cluster Development",
   "dockerFile": "Dockerfile",
   "context": "..",
-  "runArgs": ["--privileged"],
+  "runArgs": [
+    "--privileged"
+  ],
   "customizations": {
     "vscode": {
       "settings": {
@@ -19,7 +21,7 @@
       ]
     }
   },
-  "postCreateCommand": "terraform --version && helm version && kubectl version --client",
+  "postCreateCommand": "/bin/bash -c 'terraform --version && helm version && kubectl version --client'",
   "mounts": [
     "source=devcontainer-volumes,target=/workspace,type=volume",
     "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind"

@@ -1,0 +1,44 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform crash logs
+crash.log
+
+# Terraform variable files
+*.tfvars
+*.tfvars.json
+
+# Terraform lock files
+.terraform.lock.hcl
+
+# Local Terraform directories
+.terraform/
+
+# Sensitive kubeconfig
+kubeconfig
+*.kubeconfig
+.kube/
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*.backup
+
+# MacOS metadata
+.DS_Store
+
+# Editor/IDE-specific files
+.vscode/
+.idea/
+
+# ssh folder
+ssh/
+
+
+# Temporary files
+*.tmp
+*.swp
+*.swo

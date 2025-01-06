@@ -4,14 +4,16 @@ variable "network_name" {
 }
 
 variable "network_ip_range" {
-
   description = "The IP range of the network"
-
   type        = string
-
 }
 
-variable "subnet_cidr" {
-  description = "CIDR block for the Hetzner subnet"
+variable "network_zone" {
+  description = "The network zone for the subnet"
+  type        = string
+}
+
+variable "subnet_range" {
+  description = "The CIDR range for the subnet"
   type        = string
 }

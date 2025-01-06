@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    helm = {
+      source  = "hashicorp/helm"
+      version = "~> 2.16"
+    }
+  }
+}
+
 variable "kubeconfig_path" {
   description = "Path to the kubeconfig file for connecting to the Kubernetes cluster"
   type        = string
