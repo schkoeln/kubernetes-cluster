@@ -20,7 +20,7 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 # Source the .env file for helm deployments values
 RUN echo "source /workspaces/kubernetes-cluster/helm-deployments/values/.env" >> /home/vscode/.bashrc
 
-# Copy the login.sh script to the container
+# Copy the post-create.sh script to the container
 COPY .devcontainer/post-create.sh /usr/local/bin/post-create.sh
 RUN chmod +x /usr/local/bin/post-create.sh
 
