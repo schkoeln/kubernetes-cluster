@@ -21,7 +21,7 @@
       ]
     }
   },
-  "postCreateCommand": "/bin/bash -c 'terraform --version && helm version && kubectl version --client'",
+  "postCreateCommand": "/bin/bash -c '/usr/local/bin/post-create.sh'",
   "mounts": [
     "source=devcontainer-volumes,target=/workspaces,type=volume",
     "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind"

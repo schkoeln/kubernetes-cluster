@@ -40,6 +40,9 @@ ssh/
 # .env file
 .env
 
+# substituted yaml files
+*.substituted.yaml
+
 # Temporary files
 *.tmp
 *.swp
