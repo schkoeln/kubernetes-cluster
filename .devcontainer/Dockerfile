@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu-22.04
 
 # Install dependencies
 RUN apt-get update && apt-get install -y \
-    curl git unzip gnupg2 software-properties-common \
+    curl git unzip gnupg2 software-properties-common gettext \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Terraform
@@ -16,6 +16,9 @@ RUN curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | b
 # Install kubectl
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" && \
     install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && rm kubectl
+
+# Source the .env file for helm deployments values
+RUN echo "source /workspaces/kubernetes-cluster/helm-deployments/values/.env" >> /home/vscode/.bashrc
 
 # Set up user workspace
 WORKDIR /workspaces/kubernetes-cluster

@@ -37,6 +37,8 @@ kubeconfig
 # ssh folder
 ssh/
 
+# .env file
+.env
 
 # Temporary files
 *.tmp

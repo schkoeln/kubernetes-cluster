@@ -1,4 +1,4 @@
-adminUser: admin
-adminPassword: admin
+adminUser: ${GRAFANA_ADMIN_USER}
+adminPassword: ${GRAFANA_ADMIN_PASSWORD}
 persistence:
   enabled: false
